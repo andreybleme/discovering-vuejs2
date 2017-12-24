@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJS</title>
+	<script src="../../vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<button v-on:click="counter++">Increase</button>
+		<button v-on:click="counter--">Decrease</button>
+		<button v-on:click="secondCounter++">Increase second</button>
+		<p>Counter {{ counter }} | {{ secondCounter }} </p>
+		<p>Result {{ result() }} | {{ output }} </p>
+	</div>
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			counter: 0,
+			secondCounter: 0
+		},
+		computed: {
+			// doesn't recalculate when the 'secondCounter' data property is updated
+			output: function() {
+				console.log('computed!');
+				return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+			}
+		},
+		/* 
+			good for async tasks, when not using 'return', when it's really needed to 
+			do something when a property changes
+		*/ 
+		watch: {
+			counter: function (value) {
+				var vm = this;
+				setTimeout(function () {
+					vm.counter = 0;
+				}, 2000);
+			}
+		},
+		methods: {
+			// should use like this only when don't want to cache, when always want to recalculate
+			result: function() {
+				console.log('method!');
+				return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+			}
+		}
+	})
+</script>
+</body>
+</html>
