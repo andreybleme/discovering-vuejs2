@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>VueJS</title>
+	<script src="../../vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<!-- Attach the following template, doesn't only show or hide -->
+		<p v-if="show">You can see me!</p>
+		<p v-else> Now you can see me!</p>
+		<p>Do you also see me?</p>
+
+		<button @click="show = !show">Switch</button>
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			show: true
+		}
+	})
+</script>
+</body>
+</html>
