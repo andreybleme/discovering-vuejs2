@@ -8,6 +8,11 @@
 		<ul>
 			<li v-for="(ingredient, index) in ingredients"> {{ ingredient }} ( {{ index }} ) </li>
 		</ul>
+
+		<li v-for="person in persons">
+			<div v-for="(value, key, index) in person"> {{ key }}: {{ value }} ( {{ index }} ) </div>
+		</li>
+
 	</div>
 <script>
 	new Vue({
