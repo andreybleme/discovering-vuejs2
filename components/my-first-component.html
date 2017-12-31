@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>VueJS</title>
+	<link rel="stylesheet" href="">
+	<script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<my-comp></my-comp>
+</div>
+	
+	<script>
+	Vue.component('my-comp', {
+		data: function () {
+			return {
+				status: 'Critical'
+			}
+		},
+		template: '<p>Server status: {{ status }} </p>'
+	});
+	new Vue({
+		el: '#app'
+	});
+	</script>
+</body>
+</html>
