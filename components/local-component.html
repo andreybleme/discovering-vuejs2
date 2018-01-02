@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>VueJS</title>
+	<link rel="stylesheet" href="">
+	<script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<my-comp></my-comp>
+</div>
+	
+	<script>
+	var cmp = {
+		data: function () {
+			return {
+				status: 'Critical'
+			}
+		},
+		template: '<p>Server status: {{ status }} </p>'
+	};
+	new Vue({
+		el: '#app',
+		componets: {
+			'my-cmp': cmp
+		}
+	});
+	</script>
+</body>
+</html>
