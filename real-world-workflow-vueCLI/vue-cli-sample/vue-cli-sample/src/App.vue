@@ -1,5 +1,5 @@
 <template>
-  <h1>Hello world</h1>
+  <app-server-status></app-server-status>
 </template>
 
 <script>
