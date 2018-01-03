@@ -19,9 +19,9 @@
 </template>
 
 <script>
-  import ServerHeader from './ServerHeader.vue'
-  import ServerBody from './ServerBody.vue'
-  import ServerFooter from './ServerFooter.vue'
+  import ServerHeader from './components/Shared/ServerHeader.vue'
+  import ServerBody from './components/Server/ServerBody.vue'
+  import ServerFooter from './components/Shared/ServerFooter.vue'
  
   export default {
     components: {
