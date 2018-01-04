@@ -6,6 +6,12 @@
  </div>
 </template>
 
+<style type="text/css" scoped>
+	div {
+ 		border-style: 1px, solid, red;
+ 	}
+</style>
+
 <script>
 export default {
  
