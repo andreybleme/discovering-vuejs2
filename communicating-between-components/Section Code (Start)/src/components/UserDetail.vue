@@ -4,6 +4,7 @@
         <p>Many Details</p>
         <p>User name: {{ switchName() }} </p>
         <button @click="resetName">Reset name</button>
+        <button @click="resetFn()">Reset name using CB function</button>
     </div>
 </template>
 
@@ -14,7 +15,8 @@
 				type: String,
 				// required: true
 				default: 'Lucas'
-			}
+			},
+			resetFn: Function
 		},
 		methods: {
 			switchName: function () {
