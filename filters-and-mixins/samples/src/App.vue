@@ -2,6 +2,10 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg | to-lowercase }}</h1>
+    <input type="text" v-model="filterText">
+    <ul>
+      <li v-for="fruit in filteredFruits"> {{ fruit }} </li>
+    </ul>
   </div>
 </template>
 
@@ -10,8 +14,17 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'WELCOME TO YOUR VUE.JS APP'
+      msg: 'WELCOME TO YOUR VUE.JS APP',
+      fruits: ['Banana', 'Apple', 'Mango', 'Melon'],
+      filterText: ''
     }
+  },
+  computed: {
+    filteredFruits: function () {
+      return this.fruits.filter((elem) => {
+        return elem.match(this.filterText);
+      })
+    }  
   }
 }
 </script>
