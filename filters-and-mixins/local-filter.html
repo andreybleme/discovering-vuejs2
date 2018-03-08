@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>VueJS</title>
+	<link rel="stylesheet" href="">
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h2>{{ greeting | toUppercase }}</h2>
+	</div>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				greeting: 'Hello World!'
+			},
+			filters: {
+				toUppercase(value) {
+					return value.toUpperCase();
+				}
+			}
+		})
+	</script>
+</body>
+</html>
