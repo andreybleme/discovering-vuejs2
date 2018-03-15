@@ -2,6 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg | to-lowercase }}</h1>
+    <button @click="fruits.push('myNewFruit')">Add new fruit</button>
     <input type="text" v-model="filterText">
     <ul>
       <li v-for="fruit in filteredFruits"> {{ fruit }} </li>
