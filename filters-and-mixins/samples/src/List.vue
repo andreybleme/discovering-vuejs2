@@ -1,34 +1,20 @@
 <template>
-  <div id="app">
+  <div id="list">
     <img src="./assets/logo.png">
     <h1>{{ msg | to-lowercase }}</h1>
     <input type="text" v-model="filterText">
     <ul>
       <li v-for="fruit in filteredFruits"> {{ fruit }} </li>
     </ul>
-
-    <hr/>
-
-    <app-list></app-list>
   </div>
 </template>
 
 <script>
-import List from './List.vue'
-import { fruitMixin } from './fruitMixin'
+import { fruitMixin } from './fruitMixin';
+
 export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'WELCOME TO YOUR VUE.JS APP',
-      fruits: ['Banana', 'Apple', 'Mango', 'Melon'],
-      filterText: ''
-    }
-  },
-  components: {
-    appList: List 
-  },
-  mixins:[fruitMixin]
+  name: 'list',
+  mixins: [fruitMixin]
 }
 </script>
 
