@@ -1,7 +1,24 @@
 import UserStart from './components/UserStart.vue'
-import User from './components/User.vue'
-import UserDetail from './components/UserDetail.vue'
-import UserEdit from './components/UserEdit.vue'
+
+const User = resolve => {
+	require.ensure(['./components/User.vue'], () => {
+		resolve(require('./components/User.vue'))
+	})
+}
+
+const UserDetail = resolve => {
+	require.ensure(['./components/UserDetail.vue'], () => {
+		resolve(require('./components/UserDetail.vue'))
+	})
+}
+
+const UserEdit = resolve => {
+	require.ensure(['./components/UserEdit.vue'], () => {
+		resolve(require('./components/UserEdit.vue'))
+	})
+}
+
+
 
 export const routes = [
 	{
